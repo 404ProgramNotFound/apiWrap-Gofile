@@ -1,3 +1,29 @@
+# gofile-apiwrapper [![NPM version](https://badge.fury.io/js/gofile-apiwrapper.svg)](https://npmjs.org/package/gofile-apiwrapper) [![Build Status](https://travis-ci.org/404ProgramNotFound/gofile-apiwrapper.svg?branch=master)](https://travis-ci.org/404ProgramNotFound/gofile-apiwrapper)
+
+> api wrapper
+
+## Installation
+
+```sh
+$ npm install --save gofile-apiwrapper
+```
+
+## Usage
+
+```js
+const gofileApiwrapper = require('gofile-apiwrapper');
+const api = new gofileApiwrapper("email","token");
+
+// e.g.
+api.getBestServer((err,body)=>{
+    //body contain data 
+    //err is null until https get request give error
+});
+```
+
+
+
+## documentation
 ## Classes
 
 <dl>
@@ -129,3 +155,7 @@ Callback for getting response from https call
 | --- | --- | --- |
 | err | <code>Error</code> | error of https request |
 | body | <code>string</code> \| <code>\*</code> | body of https response |
+
+## License
+
+MIT © [BDream](https://github.com/404ProgramNotFound)
