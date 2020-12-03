@@ -148,5 +148,4 @@ class apiGofile {
     }
 }
 
-
 module.exports.apiGofile = apiGofile;
