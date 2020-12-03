@@ -1,0 +1,26 @@
+{
+  "name": "gofile-apiwrapper",
+  "version": "1.0.0",
+  "description": "api wrapper",
+  "main": "./src/apiWrap.js",
+  "scripts": {
+    "doc": "jsdoc -c jsdoc.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/404ProgramNotFound/apiWrap-Gofile.git"
+  },
+  "keywords": [
+    "api-wrap"
+  ],
+  "author": "BDream",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/404ProgramNotFound/apiWrap-Gofile/issues"
+  },
+  "homepage": "https://github.com/404ProgramNotFound/apiWrap-Gofile#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jsdoc": "^3.6.6"
+  }
+}
