@@ -1,6 +1,6 @@
 {
   "name": "gofile-apiwrapper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "api wrapper",
   "main": "./src/apiWrap.js",
   "scripts": {
