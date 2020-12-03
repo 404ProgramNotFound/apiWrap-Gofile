@@ -2,8 +2,7 @@
 
 /GoFile-apiWrapper/README.md
 /docs
-
-
+/jsdoc.json
 # Logs
 logs
 *.log
