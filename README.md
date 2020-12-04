@@ -27,7 +27,7 @@ api.getBestServer((err,body)=>{
 ## Classes
 
 <dl>
-<dt><a href="#apiGofile">apiGofile</a></dt>
+<dt><a href="#apiGofile">apiGofile</a></dt>     
 <dd><p>api wrapper class for Gofile rest api</p>
 </dd>
 </dl>
@@ -55,22 +55,28 @@ api wrapper class for Gofile rest api
 **Kind**: global class
 
 * [apiGofile](#apiGofile)
-    * [new apiGofile(email, token)](#new_apiGofile_new)
+    * [new apiGofile([email], [token])](#new_apiGofile_new)
     * [.email](#apiGofile+email)
     * [.token](#apiGofile+token)
+    * [.email](#apiGofile+email)
+    * [.email](#apiGofile+email) ⇒ <code>string</code>
+    * [.token](#apiGofile+token)
+    * [.token](#apiGofile+token) ⇒ <code>string</code>
     * [.getBestServer(callback)](#apiGofile+getBestServer)
-    * [.getAccountInfo(token, callback)](#apiGofile+getAccountInfo)
-    * [.getUploadList(token, callback)](#apiGofile+getUploadList)
-    * [.deleteUpload(name, callback)](#apiGofile+deleteUpload)
+    * [.getAccountInfo([token], callback)](#apiGofile+getAccountInfo)
+    * [.getUploadList([token], callback)](#apiGofile+getUploadList)
+    * [.deleteUpload([name], [code], [token], callback)](#apiGofile+deleteUpload)
+    * [.deleteFile(name, [code], [token], callback)](#apiGofile+deleteFile)
+    * [.postUpload(file, [ac], [email], [description], [password], [tags], [expire], server, callback)](#apiGofile+postUpload)
 
 <a name="new_apiGofile_new"></a>
 
-### new apiGofile(email, token)
+### new apiGofile([email], [token])
 
-| Param | Type | Description |
-| --- | --- | --- |
-| email | <code>string</code> | your email |
-| token | <code>string</code> | your apikey on profile page |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [email] | <code>string</code> | <code>&quot;\&quot;\&quot;&quot;</code> | your email |
+| [token] | <code>string</code> | <code>&quot;\&quot;\&quot;&quot;</code> | your apikey on profile page |
 
 <a name="apiGofile+email"></a>
 
@@ -92,6 +98,42 @@ api wrapper class for Gofile rest api
 | --- | --- |
 | your | account apikey |
 
+<a name="apiGofile+email"></a>
+
+### apiGofile.email
+setter of email
+
+**Kind**: instance property of [<code>apiGofile</code>](#apiGofile)
+
+| Param | Type |
+| --- | --- |
+| email | <code>string</code> |
+
+<a name="apiGofile+email"></a>
+
+### apiGofile.email ⇒ <code>string</code>
+getter of email
+
+**Kind**: instance property of [<code>apiGofile</code>](#apiGofile)
+**Returns**: <code>string</code> - email
+<a name="apiGofile+token"></a>
+
+### apiGofile.token
+setter of token
+
+**Kind**: instance property of [<code>apiGofile</code>](#apiGofile)
+
+| Param | Type |
+| --- | --- |
+| token | <code>string</code> |
+
+<a name="apiGofile+token"></a>
+
+### apiGofile.token ⇒ <code>string</code>
+getter of token
+
+**Kind**: instance property of [<code>apiGofile</code>](#apiGofile)
+**Returns**: <code>string</code> - token
 <a name="apiGofile+getBestServer"></a>
 
 ### apiGofile.getBestServer(callback)
@@ -105,39 +147,74 @@ The server chosen with this function will have better connection quality.
 
 <a name="apiGofile+getAccountInfo"></a>
 
-### apiGofile.getAccountInfo(token, callback)
+### apiGofile.getAccountInfo([token], callback)
  Data returned are : email, account type (e.g. donor, standar), file count, file size.
 
 **Kind**: instance method of [<code>apiGofile</code>](#apiGofile)
 
-| Param | Type | Description |
-| --- | --- | --- |
-| token | <code>string</code> | your token or someone else token (api key in profile page) |
-| callback | [<code>httpsResponse</code>](#httpsResponse) | handles the https request result |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [token] | <code>string</code> | <code>null</code> | someone's token (if null it will use the token setted in the class) |
+| callback | [<code>httpsResponse</code>](#httpsResponse) |  | handles the https request result |
 
 <a name="apiGofile+getUploadList"></a>
 
-### apiGofile.getUploadList(token, callback)
+### apiGofile.getUploadList([token], callback)
  Data returned are all upload with all data of file uploaded.
 
 **Kind**: instance method of [<code>apiGofile</code>](#apiGofile)
 
-| Param | Type | Description |
-| --- | --- | --- |
-| token | <code>string</code> | your token or someone else token (api key in profile page) |
-| callback | [<code>httpsResponse</code>](#httpsResponse) | handles the https request result |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [token] | <code>string</code> | <code>null</code> | someone's token (if null it will use the token setted in the class) |
+| callback | [<code>httpsResponse</code>](#httpsResponse) |  | handles the https request result |
 
 <a name="apiGofile+deleteUpload"></a>
 
-### apiGofile.deleteUpload(name, callback)
- It delete all file in all upload with the file inside.
+### apiGofile.deleteUpload([name], [code], [token], callback)
+ It delete all upload containing the file name.
 
 **Kind**: instance method of [<code>apiGofile</code>](#apiGofile)
 
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>string</code> | your token or someone else token (api key in profile page) |
-| callback | [<code>httpsResponse</code>](#httpsResponse) | handles the https request result |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [name] | <code>string</code> | <code>null</code> | name of the file (if null it delete all upload) |
+| [code] | <code>srting</code> | <code></code> | code of specific upload (if null it delete all upload with the file inside) |
+| [token] | <code>string</code> | <code>null</code> | someone's token (if null it will use the token setted in the class) |
+| callback | [<code>httpsResponse</code>](#httpsResponse) |  | handles the https request result |
+
+<a name="apiGofile+deleteFile"></a>
+
+### apiGofile.deleteFile(name, [code], [token], callback)
+ It delete all file in an upload or all upload if code of upload is not specified, if the upload have only 1 file use delete upload
+
+**Kind**: instance method of [<code>apiGofile</code>](#apiGofile)
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| name | <code>string</code> |  | name of the file |
+| [code] | <code>srting</code> | <code></code> | code of specific upload |
+| [token] | <code>string</code> | <code>null</code> | someone's token (if null it will use the token setted in the class) |
+| callback | [<code>httpsResponse</code>](#httpsResponse) |  | handles the https request result |
+
+<a name="apiGofile+postUpload"></a>
+
+### apiGofile.postUpload(file, [ac], [email], [description], [password], [tags], [expire], server, callback)
+If you specify the adminCode of an existing upload, then the file will be added to this upload.
+
+**Kind**: instance method of [<code>apiGofile</code>](#apiGofile)
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| file | <code>file</code> |  | Must contain one file. |
+| [ac] | <code>string</code> | <code>&quot;\&quot;\&quot;&quot;</code> | The admin code of an upload. If you specify it, the file will be added to this upload. |
+| [email] | <code>string</code> | <code>&quot;\&quot;\&quot;&quot;</code> | Must contain email adress syntax. The upload will be stored on this account. if is null it take the email assigned to the class in the consrtuctor or using setter |
+| [description] | <code>string</code> | <code>&quot;\&quot;\&quot;&quot;</code> | Must contain description of the upload |
+| [password] | <code>string</code> | <code>&quot;\&quot;\&quot;&quot;</code> | Must contain password of the upload(min 6 char) |
+| [tags] | <code>string</code> | <code>&quot;\&quot;\&quot;&quot;</code> | Must contain tags of the upload. If multiple tags, seperate them with comma (example : tags1,tags2) |
+| [expire] | <code>string</code> | <code>&quot;\&quot;\&quot;&quot;</code> | Must contain expiration date of the upload in the form of timestamp. |
+| server | <code>string</code> |  | the server to upload the file in |
+| callback | [<code>httpsResponse</code>](#httpsResponse) |  | handles the https request result |
 
 <a name="baseUri"></a>
 
