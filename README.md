@@ -27,7 +27,7 @@ api.getBestServer((err,body)=>{
 ## Classes
 
 <dl>
-<dt><a href="#apiGofile">apiGofile</a></dt>     
+<dt><a href="#apiGofile">apiGofile</a></dt>
 <dd><p>api wrapper class for Gofile rest api</p>
 </dd>
 </dl>
@@ -58,10 +58,10 @@ api wrapper class for Gofile rest api
     * [new apiGofile([email], [token])](#new_apiGofile_new)
     * [.email](#apiGofile+email)
     * [.token](#apiGofile+token)
-    * [.email](#apiGofile+email)
-    * [.email](#apiGofile+email) ⇒ <code>string</code>
-    * [.token](#apiGofile+token)
-    * [.token](#apiGofile+token) ⇒ <code>string</code>
+    * [.setEmail](#apiGofile+setEmail)
+    * [.getEmail](#apiGofile+getEmail) ⇒ <code>string</code>
+    * [.setToken](#apiGofile+setToken)
+    * [.getToken](#apiGofile+getToken) ⇒ <code>string</code>
     * [.getBestServer(callback)](#apiGofile+getBestServer)
     * [.getAccountInfo([token], callback)](#apiGofile+getAccountInfo)
     * [.getUploadList([token], callback)](#apiGofile+getUploadList)
@@ -96,11 +96,11 @@ api wrapper class for Gofile rest api
 
 | Name | Description |
 | --- | --- |
-| your | account apikey |
+| token | your account apikey |
 
-<a name="apiGofile+email"></a>
+<a name="apiGofile+setEmail"></a>
 
-### apiGofile.email
+### apiGofile.setEmail
 setter of email
 
 **Kind**: instance property of [<code>apiGofile</code>](#apiGofile)
@@ -109,16 +109,16 @@ setter of email
 | --- | --- |
 | email | <code>string</code> |
 
-<a name="apiGofile+email"></a>
+<a name="apiGofile+getEmail"></a>
 
-### apiGofile.email ⇒ <code>string</code>
+### apiGofile.getEmail ⇒ <code>string</code>
 getter of email
 
 **Kind**: instance property of [<code>apiGofile</code>](#apiGofile)
 **Returns**: <code>string</code> - email
-<a name="apiGofile+token"></a>
+<a name="apiGofile+setToken"></a>
 
-### apiGofile.token
+### apiGofile.setToken
 setter of token
 
 **Kind**: instance property of [<code>apiGofile</code>](#apiGofile)
@@ -127,9 +127,9 @@ setter of token
 | --- | --- |
 | token | <code>string</code> |
 
-<a name="apiGofile+token"></a>
+<a name="apiGofile+getToken"></a>
 
-### apiGofile.token ⇒ <code>string</code>
+### apiGofile.getToken ⇒ <code>string</code>
 getter of token
 
 **Kind**: instance property of [<code>apiGofile</code>](#apiGofile)
