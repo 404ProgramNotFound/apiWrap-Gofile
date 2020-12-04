@@ -1,6 +1,7 @@
 #CUSTOM 
 
 /GoFile-apiWrapper/README.md
+/GoFile-apiWrapper/src/test.*
 /docs
 /jsdoc.json
 # Logs
