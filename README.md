@@ -12,7 +12,7 @@ $ npm install --save gofile-apiwrapper
 
 ```js
 const gofileApiwrapper = require('gofile-apiwrapper');
-const api = new gofileApiwrapper("email","token");
+const api = new gofileApiwrapper.apiGofile("email","token");
 
 // e.g.
 api.getBestServer((err,body)=>{
